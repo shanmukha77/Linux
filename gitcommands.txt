@@ -1,0 +1,11 @@
+git status
+git pull
+git commit -m " Text "
+git push -u orgin master
+git log
+git add
+git log --oneline -10
+git reset --soft ( to bring the file from local repo to staging area  with out the deleting the data )
+git reset --hard ( to bring the file from local repo to staging area with deleting the data )
+git reset HEAD filename ( To bring the staging area  to workspace)
+git checkout ( To revert the changes done on workspace)
