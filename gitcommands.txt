@@ -28,3 +28,16 @@ git clone - to clone the repository
 git config --list
 git config --global alias.<alias name> <git command> example : git config --global alias.st status example2:git config --global alias.log5 "log --oneline -5"
 git config --global --unset alias.<alias_name> example: git config --global --unset alias.st
+git cherry-pick <commit-id> - used for same changes need to be applicable for multiple module
+git fetch 
+git branch == to get the details of local repository
+git branch -r == to get the details for remote branch
+git branch -a == to get both details local and remote 
+git push origin <branch name>
+git pull = git fetch + git merge
+git init <folder name > to make new folder as local repository 
+git init --bare --shared = remote repository 
+git remote add <name> <URL> git remote add origin https://github.com/shanmukha77/terraform^
+git push -u <remote_name> <local_branch_name>
+git config --global user.name <name>
+git config --local user.email <email>
