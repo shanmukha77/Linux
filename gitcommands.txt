@@ -24,3 +24,7 @@ git stash apply ( stash id {} ) = copy and paste
 git stash list = to list the files
 git stash drop {stash ID} = to remove the stash 
 git stash clear - to delete all the stash
+git clone - to clone the repository 
+git config --list
+git config --global alias.<alias name> <git command> example : git config --global alias.st status example2:git config --global alias.log5 "log --oneline -5"
+git config --global --unset alias.<alias_name> example: git config --global --unset alias.st
