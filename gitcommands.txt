@@ -14,3 +14,13 @@ git branch <branch_name> = to create a branch
 git branch -d <branch_name> = to delete a branch
 git checkout <branch_name> to switch in to another branch 
 git checkout -b <branch_name > it will create a branch and switch in to another branch at a time
+git branch -D <branch_name> To delete the branch forcefully 
+git merge <souce_branch> to merge one branch to another branch == please make sure your are in target branch 
+git commit --amend < to modify the change in the file with adding a message >
+git merge --abort
+git stash save git.same "this stash 3 " == to save the file temporary with saving the file ,
+git stash pop ( { stash id {} )  = cut and paste
+git stash apply ( stash id {} ) = copy and paste
+git stash list = to list the files
+git stash drop {stash ID} = to remove the stash 
+git stash clear - to delete all the stash
