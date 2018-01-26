@@ -9,3 +9,8 @@ git reset --soft ( to bring the file from local repo to staging area  with out t
 git reset --hard ( to bring the file from local repo to staging area with deleting the data )
 git reset HEAD filename ( To bring the staging area  to workspace)
 git checkout ( To revert the changes done on workspace)
+git branch < to list the branches > or git branch --list or git branch -a 
+git branch <branch_name> = to create a branch
+git branch -d <branch_name> = to delete a branch
+git checkout <branch_name> to switch in to another branch 
+git checkout -b <branch_name > it will create a branch and switch in to another branch at a time
