@@ -1,0 +1,89 @@
+yum install elasticsearch logstash redis filebeat kibana nginx 
+ 
+Nginx Config (Optional): 1. /etc/nginx/nginx.conf 
+Comment out server {} 
+ 
+2. /etc/nginx/conf.d/kibana.conf server { 
+    listen 80; 
+ 
+#    server_name example.com; 
+ 
+    auth_basic "Restricted Access"; 
+    auth_basic_user_file /etc/nginx/htpasswd.users; 
+ 
+    location / { 
+        proxy_pass http://localhost:5601;         proxy_http_version 1.1;         proxy_set_header Upgrade $http_upgrade;         proxy_set_header Connection 'upgrade';         proxy_set_header Host $host; 
+        proxy_cache_bypass $http_upgrade; 
+    } 
+} 
+ 
+3. htpasswd -c /etc/nginx/htpasswd.users kibanaadmin 
+ 
+Kibana Config: 
+1. /etc/kibana/kibana.yml (Optional) server.host: "0" 
+ 
+Filebeat Config (With Apache Web Server Log - /opt/logstash-tutorial.log): 
+1.	/etc/filebeat/filebeat.yml (Push to Logstash) filebeat.prospectors: - type: log   paths: 
+-	/opt/logstash-tutorial.log output.logstash:   hosts: ["localhost:5044"] 
+ 
+2.	/etc/filebeat/filebeat.yml (Push to Redis) filebeat.prospectors: - type: log 
+  paths: 
+-	/opt/logstash-tutorial.log output.redis:   hosts: ["localhost:6379"] 
+ 
+Redis Config: 
+N/A 
+ 
+Logstash Config: 
+1. /etc/logstash/conf.d/first-pipeline.conf (Push from Filebeat) input {     beats {         port => "5044" 
+    } } filter {     grok { 
+        match => { "message" => "%{COMBINEDAPACHELOG}"} 
+    } 
+    geoip { 
+        source => "clientip" 
+    } 
+} 
+output {     elasticsearch { 
+        hosts => [ "localhost:9200" ] 
+    } 
+} 
+ 
+2.  /etc/logstash/conf.d/first-pipeline.conf (Read from Redis) input {     redis {         port => "6379"         key => "filebeat"         data_type => "list" 
+#        codec => "json" 
+    } } filter {     grok { 
+        match => { "message" => "%{COMBINEDAPACHELOG}"} 
+    } 
+    geoip { 
+        source => "clientip" 
+    } 
+} 
+output {     elasticsearch { 
+        hosts => [ "localhost:9200" ] 
+    } 
+} 
+ 
+Elasticsearch Config: 
+N/A 
+ 
+systemctl stop elasticsearch logstash redis filebeat kibana systemctl start redis systemctl status redis redis-cli keys * 
+ 
+rm /var/lib/filebeat/registry systemctl start filebeat 
+systemctl status filebeat 
+ 
+redis-cli 
+keys * 
+ 
+systemctl start elasticsearch systemctl status elasticsearch curl '192.168.56.180:9200/_cat/indices?v' 
+curl -XDELETE 'localhost:9200/logstash*?pretty&pretty' 
+ 
+systemctl start logstash 
+systemctl status logstash 
+ 
+redis-cli keys * 
+ 
+curl '192.168.56.180:9200/_cat/indices?v' 
+ 
+systemctl start kibana 
+ 
+Kibana Dashboard through Browser: 
+1.	http://localhost:5601 (Without Nginx) 
+2.	http://localhost/ or http://ServerIP (With Nginx) 
