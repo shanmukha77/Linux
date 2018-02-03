@@ -63,3 +63,82 @@ rpm -ev --nodeps vsftpd to remove the package with out dependencies or forcefull
 rpm -qf /usr/bin/htpasswd = query file
 rpm -qi vsftpd query information
 rpm -qip sqlbuddy-1.3.3-1.noarch.rpm query info package
+
+1.openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mysitename.key -out mysitename.crt
+2.<VirtualHost 192.168.0.1:443>
+DocumentRoot /var/www/website
+ServerName www.domain.com
+SSLEngine on
+SSLCertificateFile /etc/ssl/crt/primary.crt
+SSLCertificateKeyFile /etc/ssl/crt/private.key
+SSLCertificateChainFile /etc/ssl/crt/intermediate.crt
+</VirtualHost> 
+
+================
+
+NTP
+
+yum install ntp
+
+To verify the time sync 
+
+ntpq -p
+
+ntpdate -q
+
+
+Field	Description	Allowed Value
+MIN	Minute field	0 to 59
+HOUR	Hour field	0 to 23
+DOM	Day of Month	1-31
+MON	Month field	1-12
+DOW	Day Of Week	0-6
+
+30 08 10 06 *
+
+30 – 30th Minute
+08 – 08 AM
+10 – 10th Day
+06 – 6th Month (June)
+* – Every day of the week
+
+00 11,16 * * * 
+
+00 – 0th Minute (Top of the hour)
+11,16 – 11 AM and 4 PM
+* – Every day
+* – Every month
+* – Every day of the week
+
+00 09-18 * * * 
+
+
+00 – 0th Minute (Top of the hour)
+09-18 – 9 am, 10 am,11 am, 12 am, 1 pm, 2 pm, 3 pm, 4 pm, 5 pm, 6 pm
+* – Every day
+* – Every month
+* – Every day of the week
+
+crontab -e
+
+crontab -l
+
+Keyword	Equivalent
+@yearly	0 0 1 1 *
+@daily	0 0 * * *
+@hourly	0 * * * *
+@reboot	Run at startup.
+
+tar and gunzip
+
+tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
+
+
+-c: Create an archive.
+-z: Compress the archive with gzip.
+-v: Display progress in the terminal while creating the archive, also known as “verbose” mode. The v is always optional in these commands, but it’s helpful.
+-f: Allows you to specify the filename of the archive.
+
+tar -xzvf archive.tar.gz
+
+tar -xzvf archive.tar.gz -C /tmp
