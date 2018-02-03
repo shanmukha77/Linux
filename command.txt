@@ -11,6 +11,10 @@ df -hT
 du -sh *
 grep=Global regular expression print
 du -sh | grep G
+cat /proc/cpuinfo
+free -m
+lscpu
+nproc
 ifconfig
 ifconfig -a
 ip addr
