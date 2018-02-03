@@ -1,0 +1,61 @@
+
+ls = list files
+ll
+ls -la
+ls -ltr
+cd 
+useradd <username>
+passwd useradd
+su
+df -hT
+du -sh *
+grep=Global regular expression print
+du -sh | grep G
+ifconfig
+ifconfig -a
+ip addr
+netstat -ntlp
+netstat -nulp
+netstat -anlp
+netstat -ntlp | grep 80
+netstat -nulp | grep 123
+cp
+mv
+whoami
+w
+pwd
+mkdir
+rm
+rm -rf
+yum install
+yum remove
+yum install -y
+yum list openssh
+yum search openssh
+yum info firefox
+yum list isntalled | less == which show installed packages in the system
+yum provides /etc/httpd/conf/httpd.conf
+yum update
+yum grouplist = to install particular package group
+yum groupinstall 'MYSQLDAtabase'
+yum groupupdate 'Mysqldatabase'
+yum groupremove 'Mysqldatabase'
+yum repolist
+yum repolist all
+yum --enablerepo=epel install phpmyadmin
+yum clean all
+yum history
+rpm --checksig pidgin-2.7.9-5.el6.2.i686.rpm == to check sigunature
+rpm -ivh pidgin-2.7.9-5.el6.2.i686.rpm = to install rpm
+rpm -qpR BitTorrent-5.2.2-1-Python2.4.noarch.rpm = to check dependiencesbefore installlating rpm
+rpm -ivh --nodeps BitTorrent-5.2.2-1-Python2.4.noarch.rpm == to isntall with out dependiences 
+ rpm -q BitTorrent = to check installed packages
+rpm -ql BitTorrent to list all the packages
+rpm -qa --last = to list recently installed packages
+rpm -qa to list all the packages 
+rpm -Uvh nx-3.5.0-2.el6.centos.i686.rpm = to upgrade the exisiting package
+ rpm -evv nx to remove package
+rpm -ev --nodeps vsftpd to remove the package with out dependencies or forcefully
+rpm -qf /usr/bin/htpasswd = query file
+rpm -qi vsftpd query information
+rpm -qip sqlbuddy-1.3.3-1.noarch.rpm query info package
