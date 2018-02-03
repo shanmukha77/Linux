@@ -1,0 +1,16 @@
+/ = top level directory,parent directory for all other directories , 
+/root = home directory for root user, its provides working enviroment for root
+/home = its a home directory for other users. it provides working enviroment for other user
+/boot = it contains bootable files
+/etc = it contains configuration files
+/usr = by default softwares are isntalled in this directory
+/opt = thrid party packages are installed in this directory
+/bin it contains commands used for normal user such as binary files
+/sbin = it contains commands used for super user such as root 
+/dev = its contains devices files 
+/proc = its contains process files 
+/var = it contains variable data like mails,log files 
+/mnt = it is default mount point information
+/media it contains all of removable media like cd-rom
+/lib = it contains library files which are used by os 
+
