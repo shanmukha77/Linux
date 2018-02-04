@@ -131,6 +131,62 @@ Keyword	Equivalent
 
 tar and gunzip
 
+
+
+users
+root = 0 /root  /bin/bash 
+system users 1-499 /var/ftp etc /sbin/nologin
+normal users 500 - 60000 /home/user /bin/bash
+
+smithj:x:561:561:Joe Smith:/home/smithj:/bin/bash
+Each field in a passwd entry is separated with ":" colon characters, and are as follows:
+
+Username, up to 8 characters. Case-sensitive, usually all lowercase
+
+An "x" in the password field. Passwords are stored in the ``/etc/shadow'' file.
+
+Numeric user id. This is assigned by the ``adduser'' script. Unix uses this field, plus the following group field, to identify which files belong to the user.
+
+Numeric group id. Red Hat uses group id's in a fairly unique manner for enhanced file security. Usually the group id will match the user id.
+
+Full name of user. I'm not sure what the maximum length for this field is, but try to keep it reasonable (under 30 characters).
+
+User's home directory. Usually /home/username (eg. /home/smithj). All user's personal files, web pages, mail forwarding, etc. will be stored here.
+
+User's "shell account". Often set to ``/bin/bash'' to provide access to the bash shell (my personal favorite shell).
+
+usermod -l newname oldname
+
+usermod -L newname to lock the user
+
+usermod -U newname  to unlock user
+
+chage -l username
+
+chage -E 2018-1-15 username
+
+userdel -r username
+
+=========================
+
+group administratiom
+
+=========================
+
+
+groupadd username
+
+usermod -a -G groupname username
+
+Access control list
+
+
+setfacl -m u:username:rx /ktdir
+
+setfacl -X u:username /opt
+
+
+
 tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
 
 
