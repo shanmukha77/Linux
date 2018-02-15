@@ -188,3 +188,14 @@ tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
 tar -xzvf archive.tar.gz
 
 tar -xzvf archive.tar.gz -C /tmp
+
+#!/usr/bin/python
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('-n','--hostname', help='Description', required=False)
+parser.add_argument('-s','--securitygroup', help='Description', required=False)
+parser.add_argument('-t','--type', help='Description', required=False)
+args = parser.parse_args()
+print("The Hostnameof the instance is : %s" % args.hostname)
+print("The Securitygroupof the instane is : %s" %args.securitygroup)
+print("The Type of the Instance : %s" %args.type)
