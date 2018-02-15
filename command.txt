@@ -37,7 +37,7 @@ yum install -y
 yum list openssh
 yum search openssh
 yum info firefox
-yum list isntalled | less == which show installed packages in the system
+yum list installed | less == which show installed packages in the system
 yum provides /etc/httpd/conf/httpd.conf
 yum update
 yum grouplist = to install particular package group
@@ -63,16 +63,6 @@ rpm -ev --nodeps vsftpd to remove the package with out dependencies or forcefull
 rpm -qf /usr/bin/htpasswd = query file
 rpm -qi vsftpd query information
 rpm -qip sqlbuddy-1.3.3-1.noarch.rpm query info package
-
-1.openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mysitename.key -out mysitename.crt
-2.<VirtualHost 192.168.0.1:443>
-DocumentRoot /var/www/website
-ServerName www.domain.com
-SSLEngine on
-SSLCertificateFile /etc/ssl/crt/primary.crt
-SSLCertificateKeyFile /etc/ssl/crt/private.key
-SSLCertificateChainFile /etc/ssl/crt/intermediate.crt
-</VirtualHost> 
 
 ================
 
