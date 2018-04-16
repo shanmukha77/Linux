@@ -41,3 +41,5 @@ git remote add <name> <URL> git remote add origin https://github.com/shanmukha77
 git push -u <remote_name> <local_branch_name>
 git config --global user.name <name>
 git config --local user.email <email>
+git push -d <remote_name> <branch_name>
+git branch -d <branch_name>
