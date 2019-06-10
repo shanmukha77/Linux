@@ -151,6 +151,8 @@ usermod -L newname to lock the user
 
 usermod -U newname  to unlock user
 
+
+
 chage -l username
 
 chage -E 2018-1-15 username
@@ -167,6 +169,8 @@ group administratiom
 groupadd username
 
 usermod -a -G groupname username
+
+gpasswd -d < username > < groupname 
 
 Access control list
 
