@@ -203,3 +203,7 @@ args = parser.parse_args()
 print("The Hostnameof the instance is : %s" % args.hostname)
 print("The Securitygroupof the instane is : %s" %args.securitygroup)
 print("The Type of the Instance : %s" %args.type)
+
+
+mysqldump -u root -p --opt --all-databases > alldb.sql
+mysqldump -u root -p --all-databases --skip-lock-tables > alldb.sql
