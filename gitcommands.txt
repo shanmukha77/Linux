@@ -46,3 +46,5 @@ git config --local user.email <email>
 git push -d <remote_name> <branch_name> == it will delete the remote branch 
 git branch -d <branch_name> = it will delete the local branch 
 git push --set-upstream origin <branch ID>
+git reset --hard 89c7c0f
+git push -f origin master
