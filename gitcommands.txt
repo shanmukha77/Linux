@@ -48,3 +48,4 @@ git branch -d <branch_name> = it will delete the local branch
 git push --set-upstream origin <branch ID>
 git reset --hard < commit id >
 git push -f origin master
+git fetch just "downloads" the changes from the remote to your local repository. git pull downloads the changes and merges them into your current branch
