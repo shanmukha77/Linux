@@ -23,6 +23,7 @@ netstat -nulp
 netstat -anlp
 netstat -ntlp | grep 80
 netstat -nulp | grep 123
+scp -r -i key.pem sourcefolder ec2-user@:172.31.44.109/home/ec2-user/
 cp
 mv
 whoami
