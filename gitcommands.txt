@@ -14,6 +14,7 @@ git checkout ( To revert the changes done on workspace)
 git branch < to list the branches > or git branch --list or git branch -a 
 git branch <branch_name> = to create a branch
 git branch -d <branch_name> = to delete a branch
+git push -d origin < branch name >
 git checkout <branch_name> to switch in to another branch 
 git checkout -b <branch_name > it will create a branch and switch in to another branch at a time
 git branch -D <branch_name> To delete the branch forcefully 
