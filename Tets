@@ -1,0 +1,10 @@
+Ensuring Successful Production Deployments During On-Call Support
+1. Understanding the Change Management Process
+During on-call support, it is crucial to have a thorough understanding of the change management process for all production deployments. This knowledge ensures that every deployment is executed smoothly and successfully, minimizing the risk of glitches or failures.
+2. Ensuring Successful Deployments
+Our goal is to achieve zero-glitch deployments. To accomplish this, we will implement best practices and standardized procedures that guide the deployment process. This proactive approach will help identify potential issues before they arise, ensuring a seamless deployment experience.
+3. Guiding On-Call Support Engineers
+When on-call support engineers encounter challenges during deployments, it is essential to provide clear guidance and support. This includes:
+Step-by-Step Assistance: Offering detailed instructions to troubleshoot issues as they occur.
+Access to Resources: Ensuring engineers have access to documentation, tools, and escalation paths.
+Knowledge Sharing: Encouraging open communication and sharing experiences from previous deployments to enhance collective knowledge.
