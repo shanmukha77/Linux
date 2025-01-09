@@ -1,0 +1,21 @@
+import boto3
+
+def list_kms_keys(region_name):
+    # Create a KMS client for the specified region
+    kms_client = boto3.client('kms', region_name=region_name)
+    
+    # Create a paginator for listing keys
+    paginator = kms_client.get_paginator('list_keys')
+    
+    key_ids = []
+    
+    # Iterate through pages and collect key IDs
+    for page in paginator.paginate():
+        key_ids.extend([key['KeyId'] for key in page['Keys']])
+    
+    return key_ids
+
+if __name__ == "__main__":
+    region = 'us-east-2'  # Specify your desired region
+    keys = list_kms_keys(region)
+    print(f"KMS Key IDs in {region}:", keys)
