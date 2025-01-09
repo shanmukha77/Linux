@@ -1,1 +1,0 @@
-docker run -d --gpus=all -e OLLAMA_TIMEOUT="5ms" -p 11434:11434 --restart always --name ollama ollama/ollama
