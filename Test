@@ -1,0 +1,14 @@
+Here's a more polished version of your message:
+
+---
+
+I wanted to bring to your attention that we are facing numerous challenges during production deployments. Below are a few JIRA tickets that highlight similar incidents:
+
+- **Lack of Git Locking Mechanism**: Since there is no locking mechanism in place for the release branch, unwanted changes are being committed to it. This results in the creation of Docker images that include these unintended commits.
+
+---
+
+Let me know if you need further adjustments!
+
+---
+Answer from Perplexity: pplx.ai/share
